@@ -1,0 +1,76 @@
+@import '_colors';
+@import '_variables';
+@import '_mixins';
+
+html {
+  font-size: 16px;
+
+  @include mq-sp {
+    font-size: 14px;
+  }
+}
+
+body {
+  background-color: $color-background;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-to,
+.v-leave {
+  opacity: 1;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity $ad-medium ease;
+}
+
+.button {
+  border: 2px solid $color-main;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  padding: calc(0.5rem + 2px) 0.75rem;
+
+  &:disabled {
+    border-color: $color-disabled;
+    color: $color-disabled;
+  }
+}
+
+.link {
+  border-bottom: 2px solid $color-main;
+  color: $color-main;
+  font-weight: bold;
+  text-decoration: none;
+
+  &-button {
+    @extend .link;
+
+    border: 2px solid $color-main;
+    border-radius: 0.25rem;
+    display: inline-block;
+    padding: calc(0.5rem + 2px) 0.75rem;
+  }
+
+  &-exact {
+    border-color: transparent;
+  }
+}
+
+.input {
+  border: 2px solid $color-main;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  &::placeholder {
+    color: $color-disabled;
+  }
+
+  &:disabled {
+    border-color: $color-disabled;
+  }
+}

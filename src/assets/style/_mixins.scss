@@ -1,0 +1,27 @@
+@mixin mq-sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin fullWidth {
+  width: calc(100vw - calc(100vw - 100%));
+}
+
+@mixin flexCentering {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin z-first {
+  z-index: 12;
+}
+
+@mixin z-second {
+  z-index: 11;
+}
+
+@mixin z-third {
+  z-index: 10;
+}

@@ -1,28 +1,32 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  #app(v-cloak)
+    XXButton
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style lang="scss">
+@import '../node_modules/ress/dist/ress.min.css';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  @include fullWidth;
+
+  animation: cloak-in $ad-medium;
+  color: $color-main;
+  display: flex;
+  flex-direction: column;
+  font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  line-height: 1;
+  min-height: 100vh;
+
+  &[v-cloak] {
+    opacity: 0;
+  }
+
+  @keyframes cloak-in {
+    0% {
+      opacity: 0;
+    }
+  }
 }
 </style>
