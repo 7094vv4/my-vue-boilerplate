@@ -1,6 +1,5 @@
 <template lang="pug">
   #app(v-cloak)
-    XXButton
 </template>
 
 <style lang="scss">
